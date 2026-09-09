@@ -7,8 +7,8 @@ plugins {
 
 android {
     namespace = "com.joaobarboza.play_trophy"
-    compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    compileSdk = 37
+    ndkVersion = "30.0.16248370"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -37,6 +37,8 @@ android {
             signingConfig = signingConfigs.getByName("debug")
         }
     }
+    compileSdkMinor = 1
+    buildToolsVersion = "37.0.0"
 }
 
 flutter {

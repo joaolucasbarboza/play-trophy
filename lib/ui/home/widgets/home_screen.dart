@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:play_trophy/ui/core/ui/navigation_bar_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   final String name = "Teste";
@@ -13,36 +14,11 @@ class _HomeScreenState extends State<HomeScreen> {
   int currentPageIndex = 0;
   final Duration durationMs = Duration(milliseconds: 500);
 
+  @override
   Widget build(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
+
     return Scaffold(
-      bottomNavigationBar: NavigationBar(
-        onDestinationSelected: (int index) {
-          setState(() {
-            currentPageIndex = index;
-          });
-        },
-        selectedIndex: currentPageIndex,
-        animationDuration: durationMs,
-        labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
-        destinations: [
-          NavigationDestination(
-            selectedIcon: Icon(Icons.home_rounded),
-            icon: Icon(Icons.home_outlined),
-            label: "Início",
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(Icons.collections_bookmark),
-            icon: Icon(Icons.collections_bookmark_outlined),
-            label: "Biblioteca",
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(Icons.person_rounded),
-            icon: Icon(Icons.person_outline),
-            label: "Perfil",
-          ),
-        ],
-      ),
+      bottomNavigationBar: NavigationBarWidget(),
     );
   }
 }
