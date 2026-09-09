@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
-  final String name = "João";
+  final String name = "Teste";
   final String plataform = "PlayStation5";
 
   const HomeScreen({super.key});
