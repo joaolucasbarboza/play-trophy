@@ -22,9 +22,13 @@ class MyApp extends StatelessWidget {
 }
 
 ThemeData _buildTheme() {
-  final colorScheme =  ColorScheme.fromSeed(seedColor: Colors.blueAccent);
   final baseTheme = ThemeData(
-    colorScheme: colorScheme,
+    pageTransitionsTheme: PageTransitionsTheme(
+      builders: <TargetPlatform, PageTransitionsBuilder>{
+        TargetPlatform.android: ZoomPageTransitionsBuilder()
+      }
+    ),
+    colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
     textTheme: GoogleFonts.interTextTheme()
   );
 

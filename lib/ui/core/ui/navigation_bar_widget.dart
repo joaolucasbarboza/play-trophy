@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_lucide/flutter_lucide.dart';
+import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 class NavigationBarWidget extends StatefulWidget {
   const NavigationBarWidget({super.key});
@@ -26,18 +26,18 @@ class _NavigationBarWidget extends State<NavigationBarWidget> {
       labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
       destinations: [
         NavigationDestination(
-          selectedIcon: Icon(LucideIcons.door_open),
-          icon: Icon(LucideIcons.door_closed),
+          selectedIcon: Icon(Iconsax.home_2),
+          icon: Icon(Iconsax.home_2_copy),
           label: "Início",
         ),
         NavigationDestination(
-          selectedIcon: Icon(LucideIcons.library_big),
-          icon: Icon(LucideIcons.library),
+          selectedIcon: Icon(Iconsax.book_1),
+          icon: Icon(Iconsax.book_1_copy),
           label: "Biblioteca",
         ),
         NavigationDestination(
-          selectedIcon: Icon(LucideIcons.user_round),
-          icon: Icon(LucideIcons.user_round),
+          selectedIcon: Icon(Iconsax.user),
+          icon: Icon(Iconsax.user_copy),
           label: "Perfil",
         ),
       ],
