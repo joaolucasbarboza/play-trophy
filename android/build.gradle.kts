@@ -1,3 +1,5 @@
+val sourceCompatibility by extra(JavaVersion.VERSION_11)
+val targetCompatibility by extra(JavaVersion.VERSION_11)
 allprojects {
     repositories {
         google()
