@@ -4,12 +4,12 @@ import 'package:play_trophy/utils/data.dart';
 import 'package:play_trophy/utils/images_strings.dart';
 
 class CarouselContentWidget extends StatefulWidget {
-  final String nikename;
-
   const CarouselContentWidget({
     super.key,
-    required this.nikename,
+    required this.nickname,
   });
+
+  final String nickname;
 
   @override
   State<StatefulWidget> createState() => _CarouselContentState();
@@ -39,7 +39,7 @@ class _CarouselContentState extends State<CarouselContentWidget> {
                 width: 24,
                 height: 24,
               ),
-              Text(widget.nikename, style: textTheme.labelLarge),
+              Text(widget.nickname, style: textTheme.labelLarge),
             ],
           ),
           Row(

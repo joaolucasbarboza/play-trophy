@@ -3,13 +3,15 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:play_trophy/ui/core/ui/navigation_bar_widget.dart';
 import 'package:play_trophy/ui/home/widgets/carousel_content_widget.dart';
+import 'package:play_trophy/ui/home/widgets/games_widget.dart';
+import 'package:play_trophy/utils/data.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   final String name = "Teste";
   final String plataform = "PlayStation5";
-  final String nikename = "zValla_";
-
-  const HomeScreen({super.key});
+  final String nickname = "zValla_";
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -23,9 +25,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final carouselItems = [
-      CarouselContentWidget(nikename: widget.nikename),
-      CarouselContentWidget(nikename: widget.nikename),
+      CarouselContentWidget(nickname: widget.nickname),
+      CarouselContentWidget(nickname: widget.nickname),
     ];
+
+    final TextTheme textTheme = Theme.of(context).textTheme;
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
     return Scaffold(
       bottomNavigationBar: NavigationBarWidget(),
@@ -45,6 +50,32 @@ class _HomeScreenState extends State<HomeScreen> {
                   enableInfiniteScroll: false,
                   autoPlay: false,
                   scrollPhysics: const BouncingScrollPhysics(),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(12),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Jogos",
+                      style: textTheme.titleLarge?.copyWith(
+                        color: colorScheme.secondary,
+                        fontWeight: FontWeight(500),
+                      ),
+                    ),
+                    Column(
+                      children: Games.values.map((Games game) {
+                        return GamesWidget(
+                          pathImage: game.pathImage,
+                          name: game.name,
+                          plataform: game.plataform,
+                          status: game.status,
+                          progress: game.progress,
+                        );
+                      }).toList(),
+                    ),
+                  ],
                 ),
               ),
             ],

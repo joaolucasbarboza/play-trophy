@@ -11,3 +11,43 @@ enum Awards {
   final String pathImage;
   final String points;
 }
+
+enum Games {
+  rdrTwo(
+    ImagesStrings.rdrTwo,
+    "Red Dead Redemption 2",
+    "PS5",
+    "Em jogatina",
+    0.2,
+  ),
+
+  gtaSix(
+    ImagesStrings.gtaSix,
+    "Grand Theft Auto VI",
+    "Steam",
+    "Em jogatina",
+    0.4,
+  ),
+
+  dsTwo(
+    ImagesStrings.dsTwo,
+    "Death Stranding 2: On the Beach",
+    "PS5",
+    "Em jogatina",
+    0.7,
+  );
+
+  const Games(
+    this.pathImage,
+    this.name,
+    this.plataform,
+    this.status,
+    this.progress,
+  );
+
+  final String pathImage;
+  final String name;
+  final String plataform;
+  final String status;
+  final double progress;
+}
