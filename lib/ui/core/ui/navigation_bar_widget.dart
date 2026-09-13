@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:iconsax_flutter/iconsax_flutter.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:play_trophy/utils/icons.dart';
 
 class NavigationBarWidget extends StatefulWidget {
   const NavigationBarWidget({super.key});
@@ -14,30 +14,30 @@ class _NavigationBarWidget extends State<NavigationBarWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
     return NavigationBar(
       onDestinationSelected: (int index) {
         setState(() {
           currentPageIndex = index;
         });
       },
+      height: 60,
       selectedIndex: currentPageIndex,
       animationDuration: durationMs,
-      labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+      labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
       destinations: [
         NavigationDestination(
-          selectedIcon: Icon(Iconsax.home_2),
-          icon: Icon(Iconsax.home_2_copy),
+          selectedIcon: IconsTheme.homeRounded,
+          icon: IconsTheme.homeRounded,
           label: "Início",
         ),
         NavigationDestination(
-          selectedIcon: Icon(Iconsax.book_1),
-          icon: Icon(Iconsax.book_1_copy),
+          selectedIcon: IconsTheme.bookRounded,
+          icon: IconsTheme.bookRounded,
           label: "Biblioteca",
         ),
         NavigationDestination(
-          selectedIcon: Icon(Iconsax.user),
-          icon: Icon(Iconsax.user_copy),
+          selectedIcon: IconsTheme.userRounded,
+          icon: IconsTheme.userRounded,
           label: "Perfil",
         ),
       ],
