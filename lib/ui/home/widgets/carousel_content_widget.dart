@@ -3,10 +3,10 @@ import 'package:material_ui/material_ui.dart';
 import 'package:play_trophy/utils/data.dart';
 import 'package:play_trophy/utils/images_strings.dart';
 
-class CarouselContent extends StatefulWidget {
+class CarouselContentWidget extends StatefulWidget {
   final String nikename;
 
-  const CarouselContent({
+  const CarouselContentWidget({
     super.key,
     required this.nikename,
   });
@@ -15,7 +15,7 @@ class CarouselContent extends StatefulWidget {
   State<StatefulWidget> createState() => _CarouselContentState();
 }
 
-class _CarouselContentState extends State<CarouselContent> {
+class _CarouselContentState extends State<CarouselContentWidget> {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;

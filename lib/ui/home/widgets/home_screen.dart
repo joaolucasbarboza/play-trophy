@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 
 import 'package:material_ui/material_ui.dart';
 import 'package:play_trophy/ui/core/ui/navigation_bar_widget.dart';
-import 'package:play_trophy/ui/home/widgets/carousel_content.dart';
+import 'package:play_trophy/ui/home/widgets/carousel_content_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   final String name = "Teste";
@@ -23,8 +23,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final carouselItems = [
-      CarouselContent(nikename: widget.nikename),
-      CarouselContent(nikename: widget.nikename),
+      CarouselContentWidget(nikename: widget.nikename),
+      CarouselContentWidget(nikename: widget.nikename),
     ];
 
     return Scaffold(
